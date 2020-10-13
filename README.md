@@ -110,4 +110,43 @@ if 문을 활용해 아래의 실행 결과를 반영한 간단 계산기를 만
 '$' 는 본 프로그램에서는 지원하지 않는 연산자입니다.
 계속 진행하시겠습니까? (종료: n|N) n
 프로그램을 종료합니다...
+
+while True:
+
+    going = "n"
+
+    operand1 = input("첫 번째 숫자를 입력하세요: ")
+    operator = input("연산자를 입력하세요 (+, -, *, /): ")
+    operand2 = input("두 번째 숫자를 입력하세요: ")
+
+    if operand1 == "":
+        operand1 = 0
+
+    if operator == "":
+        operator = "+"
+
+    if operand2 == "" and operator == "/":
+        operand2 = 1
+    elif operand2 == "" and operator != "/":
+        operand2 = 0
+
+    operand1 = int(operand1)
+    operand2 = int(operand2)
+
+    if operator == "+":
+        print("{0} + {1} = {2}".format(operand1, operand2, operand1 + operand2))
+    elif operator == "-":
+        print("{0} - {1} = {2}".format(operand1, operand2, operand1 - operand2))
+    elif operator == "*":
+        print("{0} * {1} = {2}".format(operand1, operand2, operand1 * operand2))
+    elif operator == "/":
+        print("{0} / {1} = {2:.2f}".format(operand1, operand2, operand1 / operand2))
+    else:
+        print("'{0}' 는 본 프로그램에서는 지원하지 않는 연산자입니다.".format(operator))
+
+    going = input("계속 진행하시겠습니까? (종료: n|N) ")
+    if going == "n" or going == "N":
+        break
+
+print("프로그램을 종료합니다...")
 </pre>
