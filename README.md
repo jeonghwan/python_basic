@@ -41,6 +41,23 @@ if 문을 활용해 아래의 실행 결과를 반영한 간단 계산기를 만
 연산자를 입력하세요 (+, -, *, /): # 
 두 번째 숫자를 입력하세요: 3 
 '#'는 본 프로그램에서 지원하지 않는 연산자입니다.
+
+operand1, operator, operand2 = 0, "", 0
+
+operand1 = int(input("첫 번째 숫자를 입력하세요: "))
+operator = input("연산자를 입력하세요 (+, -, *, /): ")
+operand2 = int(input("두 번째 숫자를 입력하세요: "))
+
+if operator == "+":
+    print("%d + %d = %d" % (operand1, operand2, operand1 + operand2))
+elif operator == "-":
+    print("%d - %d = %d" % (operand1, operand2, operand1 - operand2))
+elif operator == "*":
+    print("%d * %d = %d" % (operand1, operand2, operand1 * operand2))
+elif operator == "/":
+    print("%d / %d = %.2f" % (operand1, operand2, operand1 / operand2))
+else:
+    print("'%s'는 본 프로그램에서 지원하지 않는 연산자입니다" % operator)
 </pre>
 
 <pre>
@@ -69,6 +86,32 @@ if 문을 활용해 아래의 실행 결과를 반영한 간단 계산기를 만
   *******
  *********
 ***********
+
+for i in range(1, 5):
+    print("*" * i)
+
+# i = 1
+# while i <= 4:
+#     print("*" * i)
+#     i = i + 1
+
+for i in range(1, 3):
+    for k in range(1, 5):
+        print("*" * k)
+
+# i, k = 1, 1
+# while i <= 2:
+#     while k <= 4:
+#         print("*" * k)
+#         k = k + 1
+#     i = i + 1
+#     k = 1
+
+i, k = 5, 1
+while i >= 0:
+    print("{0}{1}".format(" " * i, "*" * (2 * k - 1)))
+    i = i - 1
+    k = k + 1
 </pre>
 
 <pre>
