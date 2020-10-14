@@ -328,7 +328,22 @@ A 학교에서는 단체 티셔츠를 주문하기 위해 학생별로 원하는
 
 def solution(shirt_size):
     result = []
-    
+    for i in range(6):
+        result.append(0)
+
+    for v in shirt_size:
+        if v == "XS":
+            result[0] += 1
+        elif v == "S":
+            result[1] += 1
+        elif v == "M":
+            result[2] += 1
+        elif v == "L":
+            result[3] += 1
+        elif v == "XL":
+            result[4] += 1
+        elif v == "XXL":
+            result[5] += 1
     return result
 
 
