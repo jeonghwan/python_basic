@@ -352,3 +352,95 @@ ret = solution(shirt_size)
 
 print("Solution: return value of the function is ", ret, " .")
 </pre>
+
+<pre>
+A 대학에서는 수준별 영어 강의를 제공하고 있습니다. 초급 영어 강의는 토익시험에서 650점 이상 800점 미만의 성적을 취득한
+학생만을 수강대상으로 하고 있습니다. 초급 영어 강의에 수강신청한 사람이 10명일 때, 이 중에서 몇명이 수강 대상에 해당하는지
+확인하려합니다.
+수강신청자들의 토익 성적이 들어있는 리스트 scores가 매개변수로 주어질 때, 수강 대상자들의 인원수를 return 하도록
+solution 함수를 작성했습니다. 그러나, 코드 일부분이 잘못되어있기 때문에, 몇몇 입력에 대해서는 올바르게 동작하지 않습니다.
+주어진 코드에서 한 줄만 변경해서 모든 입력에 대해 올바르게 동작하도록 수정해주세요.
+---
+#####매개변수 설명
+수강신청자들의 토익 성적이 들어있는 리스트 scores가 solution 함수의 매개변수로 주어집니다.
+* scores의 원소는 500 이상 990 이하의 정수입니다.
+* scores의 길이는 10입니다.
+---
+#####return 값 설명
+수강 대상자들의 인원수를 return 해주세요.
+---
+#####예시
+| scores                                             | return |
+|----------------------------------------------------|--------|
+| [650, 722, 914, 558, 714, 803, 650, 679, 669, 800] | 6      |
+#####예시 설명
+|점수| 650 | 722 | 914 | 558 | 714 | 803 | 650 | 679 | 669 | 800 |
+|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|수강 대상| O   | O   | X   | X   | O   | X   | O   | O   | O   | X   |
+650점 이상 800점 미만의 성적을 취득한 학생이 수강대상이므로, 800점을 취득한 학생은 수강대상이 아닙니다.
+따라서, 6명이 수강 대상입니다.
+
+def solution(scores):
+    count = 0
+    for s in scores:
+        if 650 <= s or s < 800:
+            count += 1
+    return count
+
+scores = [650, 722, 914, 558, 714, 803, 650, 679, 669, 800]
+ret = solution(scores)
+
+print("Solution: return value of the function is", ret, ".")
+</pre>
+
+<pre>
+앞에서부터 읽을 때와 뒤에서부터 읽을 때 똑같은 단어 또는 문장을 팰린드롬(palindrome)이라고 합니다.
+예를 들어서 racecar, noon은 팰린드롬 단어입니다. 
+소문자 알파벳, 공백(" "), 그리고 마침표(".")로 이루어진 문장이 팰린드롬 문장인지 점검하려 합니다.
+문장 내에서 알파벳만 추출하였을 때에 팰린드롬 단어이면 팰린드롬 문장입니다.
+예를 들어, "Never odd or even."과 같은 문장은 팰린드롬입니다.
+소문자 알파벳, 공백(" "), 그리고 마침표(".")로 이루어진 문장 sentence가 주어질 때 팰린드롬인지 아닌지를
+return 하도록 solution 함수를 작성했습니다. 그러나, 코드 일부분이 잘못되어있기 때문에, 몇몇 입력에 대해서는
+올바르게 동작하지 않습니다. 주어진 코드에서 한 줄만 변경해서 모든 입력에 대해 올바르게 동작하도록 수정해주세요.
+---
+##### 매개변수 설명
+소문자 알파벳, 공백(" "), 그리고 마침표(".")로 이루어진 문장 sentence가 solution 함수의 매개변수로 주어집니다.
+* sentence에는 적어도 하나의 알파벳이 포함되어 있습니다.
+* setntence의 각 문자는 소문자 알파벳, 공백(" "), 또는 마침표(".")입니다.
+---
+##### return 값 설명
+주어진 문장이 팰린드롬인지 아닌지를 return 해주세요.
+---
+##### 예시
+| sentence             	| return 	|
+|----------------------	|--------	|
+| "never odd or even." 	| true   	|
+| "palindrome"         	| false  	|
+##### 예시 설명
+예시 #1
+알파벳과 숫자만 추출하여 소문자로 변환해보면 "neveroddoreven"이 되며 이 단어는 팰린드롬입니다.
+예시 #2
+문장의 맨 앞 문자인 "p"와 맨 뒤 문자인 "e"가 다르므로 팰린드롬이 아닙니다.
+
+def solution(sentence):
+    str = ''
+    for c in sentence:
+        if c != '.' or c != ' ':
+            str += c
+    size = len(str)
+    for i in range(size // 2):
+        if str[i] != str[size - 1 - i]:
+            return False
+    return True
+
+
+sentence1 = "never odd or even."
+ret1 = solution(sentence1)
+
+print("Solution: return value of the function is", ret1, ".")
+    
+sentence2 = "palindrome"
+ret2 = solution(sentence2)
+
+print("Solution: return value of the function is", ret2, ".")
+</pre>
