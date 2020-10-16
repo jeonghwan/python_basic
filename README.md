@@ -444,3 +444,170 @@ ret2 = solution(sentence2)
 
 print("Solution: return value of the function is", ret2, ".")
 </pre>
+
+<br>
+
+<pre>
+#문제1 (40점)
+여행객들의 총 교통비를 계산하려고 합니다. 교통편은 "Bus", "Ship", "Airplane" 총 3가지입니다. 
+나이가 20살 이상이면 어른 요금을, 그렇지 않으면 어린이 요금을 받습니다. 
+각 교통편별 가격은 다음과 같습니다.
+|   | 어른 | 어린이 |
+|---|---|---|
+| Bus | 40,000원  | 15,000원 |
+| Ship |  30,000원 | 13,000원 |
+| Airplane | 70,000원 | 45,000원 |
+여행객들이 10명 이상인 경우 연령에 따라 할인을 받습니다.
+| 어른 | 어린이 |
+|---|---|
+| 10% | 20% |
+여행객들의 나이를 담고 있는 리스트 member_age와 교통편인 transportation이 매개변수로 주어질 때, 
+총 교통비를 return 하도록 solution 함수를 완성해주세요.
+---
+#####매개변수 설명
+여행객들의 나이를 담고 있는 리스트 member_age와 교통편인  transportation이 solution 함수의 
+매개변수로 주어집니다.
+* transportation은 "Bus" 또는 "Ship" 또는 "Airplane" 입니다.
+---
+#####return값 설명
+교통비 총액을 return 해주세요.
+---
+#####예시
+| member_age | transportation | return |
+|---|---|---|
+| [13, 33, 45, 11, 20] | "Bus" | 150000 |
+| [25, 11, 27, 56, 7, 19, 52, 31, 77, 8] | "Ship" | 203600 |
+---
+#####예시 설명
+예시 #1
+여행객들의 나이는 [13, 33, 45, 11, 20]이고 교통수단으로는 "Bus"를 이용하려합니다. 
+나이가 20살 미만인 인원은 2명으로 어린이 요금은 30,000원이고 나이가 20살 이상인 인원은 3명으로 
+어른 요금은 120,000원입니다. 따라서 교통비 총액은 150,000원입니다.
+
+예시 #2
+여행객들의 나이는 [25, 11, 27, 56, 7, 19, 52, 31, 77, 8]이고 교통수단으로는 "Ship"을 이용하려합니다. 
+여행객들이 10명 이상이므로 교통비가 할인됩니다. 나이가 20살 미만인 인원은 4명으로 어린이 요금은 
+41,600원이고 나이가 20살 이상인 인원은 6명으로 어른 요금은 162,000원입니다. 
+따라서 교통비 총액은 203,600원입니다.
+
+def solution(member_age, transportation):
+	pass
+
+
+member_age1 = [13, 33, 45, 11, 20]
+transportation1 = "Bus"
+ret1 = solution(member_age1, transportation1)
+
+print("solution 함수의 반환 값은", ret1, "입니다.")
+
+member_age2 = [25, 11, 27, 56, 7, 19, 52, 31, 77, 8]
+transportation2 = "Ship"
+ret2 = solution(member_age2, transportation2)
+
+print("solution 함수의 반환 값은", ret2, "입니다.")
+</pre>
+
+
+<pre>
+#문제 (30점)
+학생들의 시험 점수가 주어졌을 때, n번 학생이 몇 등인지 구하려 합니다. 학번은 0번부터 시작하며, 시험 점수는 학번순으로 주어집니다.
+학생들의 시험 점수가 번호순으로 들어있는 리스트 scores와 학번 n이 solution 함수의 매개변수로 주어질 때, 
+n번 학생의 등수를 return 하도록 solution 함수를 작성하려 합니다. 
+코드가 올바르게 동작하도록 빈칸에 주어진 func_a, func_b, func_c 함수와 매개변수를 알맞게 채워주세요.
+---
+#####매개변수 설명
+학생들의 시험 점수가 번호순으로 들은 리스트 scores와 학번 n이 solution 함수의 매개변수로 주어집니다.
+* 점수는 0점 이상 100점 이하이며 동점자는 없습니다.
+* n은 0 이상 (scores의 길이 - 1) 이하의 정수입니다.
+---
+#####return 값 설명
+n번 학생의 등수를 return 해주세요.
+---
+#####예시
+| scores           | n | result |
+|------------------|---|--------|
+| [20, 60, 98, 59] | 3 | 3      |
+#####예시 설명
+* 3번 학생의 점수는 59점입니다.
+* 점수를 내림차순으로 정렬하면 [98, 60, 59, 20]입니다.
+* 정렬된 점수에서 59는 3번째에 있습니다.
+따라서 3번 학생은 3등입니다.
+
+def func_a(scores, score):
+    rank = 1
+    for s in scores:
+        if s == score:
+            return rank
+        rank += 1
+    return 0
+
+def func_b(arr):
+    arr.sort(reverse=True)
+
+def func_c(arr, n):
+    return arr[n]
+
+def solution(scores, n):
+    score = func_@@@(@@@)
+    func_@@@(@@@)
+    answer = func_@@@(@@@)
+    return answer
+
+
+scores = [20, 60, 98, 59]
+n = 3
+ret = solution(scores, n)
+
+print("solution 함수의 반환 값은", ret, "입니다.")
+</pre>
+
+
+<pre>
+#문제3 (30점)
+A씨가 하루에 TV를 두 대 이상 트는 시간을 알아내려합니다. A씨는 매일 세 프로그램을 시청합니다. 
+프로그램 방송 시간이 겹칠 때는 TV를 여러 대 켜서 모든 프로그램을 봅니다.
+예를 들어 두 프로그램 방송 시간대가 겹치면 TV를 두 대 켜고, 세 프로그램 방송 시간이 겹치면 TV를 세 대 켭니다.
+세 프로그램 방영 시작 시각과 끝 시각이 담긴 2차원 리스트 programs가 매개변수로 주어질 때, 
+하루에 TV를 2대 이상 트는 총 시간을 return 하도록 solution 함수를 작성했습니다. 
+그러나, 코드 일부분이 잘못되어있기 때문에, 몇몇 입력에 대해서는 올바르게 동작하지 않습니다. 
+주어진 코드에서 한 줄만 변경해서 모든 입력에 대해 올바르게 동작하도록 수정하세요.
+---
+#####매개변수 설명
+3개의 프로그램이 시작되는 시각과 끝나는 시각이 담긴 2차원 리스트 programs가 solution 함수의 매개변수로 주어집니다.
+* programs 리스트의 각 원소는 각 프로그램의 방송 시간이 [시작 시각, 끝 시각] 형태로 들어있습니다.
+* 프로그램의 시작 시각과 끝 시각은 0 이상 24 이하의 정수입니다.
+* 프로그램의 시작 시각은 끝 시각보다 항상 빠릅니다.
+---
+#####return 값 설명
+A 씨가 TV를 2대 이상 트는 총 시간을 return 해주세요.
+---
+#####예시
+| programs            		 | return |
+|--------------------------|--------|
+| [[1, 6], [3, 5], [2, 8]] | 4     |
+---
+#####예시 설명
+2대의 TV를 트는 시간이 2시부터 3시까지, 5시부터 6시까지 총 2시간이고
+3대의 TV를 트는 시간이 3시부터 5시까지 총 2시간입니다.
+따라서 TV를 2대 이상 트는 시간은 총 4시간입니다.
+
+
+def solution(programs):
+    answer = 0
+    used_tv = [0] * 25
+
+    for program in programs:
+        for i in range(program[0], program[1]):
+            used_tv[i] = used_tv[i] + 1
+    
+    for i in used_tv:
+        if i >= 1:
+            answer = answer + 1
+    return answer
+
+
+programs = [[1, 6], [3, 5], [2, 8]]
+ret = solution(programs)
+
+print("solution 함수의 반환 값은", ret, "입니다.")
+</pre>
