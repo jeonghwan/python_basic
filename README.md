@@ -491,7 +491,28 @@ print("Solution: return value of the function is", ret2, ".")
 따라서 교통비 총액은 203,600원입니다.
 
 def solution(member_age, transportation):
-	pass
+    if transportation == 'Bus':
+        adult_expense = 40000
+        child_expense = 15000
+    elif transportation == 'Ship':
+        adult_expense = 30000
+        child_expense = 13000
+    elif transportation == 'Airplane':
+        adult_expense = 70000
+        child_expense = 45000
+
+    if len(member_age) >= 10:
+        adult_expense = adult_expense/10*9
+        child_expense = child_expense/10*8
+
+    total_expenses = 0
+    for age in member_age:
+        if age >= 20:
+            total_expenses += adult_expense
+        else:
+            total_expenses += child_expense
+
+    return int(total_expenses)
 
 
 member_age1 = [13, 33, 45, 11, 20]
@@ -505,6 +526,41 @@ transportation2 = "Ship"
 ret2 = solution(member_age2, transportation2)
 
 print("solution 함수의 반환 값은", ret2, "입니다.")
+
+
+
+def solution(member_age, transportation):
+	fare = {
+		"Bus": {"adult": 40000, "child": 15000},
+		"Ship": {"adult": 30000, "child": 13000},
+		"Airplane": {"adult": 70000, "child": 45000}
+	}
+	adult_expense = fare[transportation]["adult"]
+	child_expense = fare[transportation]["child"]
+	if len(member_age) >= 10:
+		adult_expense = adult_expense/10*9
+		child_expense = child_expense/10*8
+	total_expenses = 0
+	for age in member_age:
+		if age >= 20:
+			total_expenses += adult_expense
+		else:
+			total_expenses += child_expense
+	return int(total_expenses)
+
+
+member_age1 = [13, 33, 45, 11, 20]
+transportation1 = "Bus"
+ret1 = solution(member_age1, transportation1)
+
+print("solution 함수의 반환 값은", ret1, "입니다.")
+
+member_age2 = [25, 11, 27, 56, 7, 19, 52, 31, 77, 8]
+transportation2 = "Ship"
+ret2 = solution(member_age2, transportation2)
+
+print("solution 함수의 반환 값은", ret2, "입니다.")
+
 </pre>
 
 
@@ -548,17 +604,17 @@ def func_c(arr, n):
     return arr[n]
 
 def solution(scores, n):
-    score = func_@@@(@@@)
-    func_@@@(@@@)
-    answer = func_@@@(@@@)
+    score = func_c(scores, n)
+    func_b(scores)
+    answer = func_a(scores, score)
     return answer
-
 
 scores = [20, 60, 98, 59]
 n = 3
 ret = solution(scores, n)
 
 print("solution 함수의 반환 값은", ret, "입니다.")
+
 </pre>
 
 
@@ -599,9 +655,9 @@ def solution(programs):
     for program in programs:
         for i in range(program[0], program[1]):
             used_tv[i] = used_tv[i] + 1
-    
+
     for i in used_tv:
-        if i >= 1:
+        if i >= 2:
             answer = answer + 1
     return answer
 
@@ -610,4 +666,5 @@ programs = [[1, 6], [3, 5], [2, 8]]
 ret = solution(programs)
 
 print("solution 함수의 반환 값은", ret, "입니다.")
+
 </pre>
